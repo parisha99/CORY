@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Job Portal Section</title>
+  <body style="background-color:#98bfb5;"></body>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="public\css\style3.css" type="text/css">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="public\css\styles.css" type="text/css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="public\images\favicon-32x32.png" type="image" sizes="32x32">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+  <section class="colored-section" id="title" style="background-color: #98bfb5;">
+
+    <div class="container-fluid">
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="#"><strong><h1> CORY </h1></strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <!-- Item 1 -->
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/" style="color: white;text-decoration: none; font-size: 25px;"> Home <span class="sr-only">(current)</span></a>
+        </li>
+          
+        <!-- Item 2 -->
+
+        <li class="nav-item">
+            <a class="nav-link" style="color: white;text-decoration: none;font-size: 25px;" href="home"> Login | Signup </a>
+        </li>
+
+        <!-- Item 3 -->
+
+        <li class="nav-item">
+          <a class="nav-link" href="#footer" style="color: white;text-decoration: none; font-size: 25px;"> Contact </a>
+        </li>
+      </ul>
+
+        <!-- Item 4 -->
+
+      <li>
+        <div id="google_translate_element"></div> 
+        <script type="text/javascript" > 
+          function googleTranslateElementInit() { 
+            new google.translate.TranslateElement(
+              {pageLanguage: 'en'}, 
+              'google_translate_element'
+            ); 
+          } 
+        </script> 
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+      </li>
+  </div>
+  </section>
+
+  <!--main section-->
+  <div class="container">
+    <div class="row">
+      <h1><%= title %></h1>
+      <table class="table table-striped table primary" >
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Job Type</th>
+            <th>Location</th>
+            <th>Payment</th>
+            <th>Time Duration</th>
+            <th>Apply</th>
+          </tr>
+        </thead>
+          <% records.forEach(function(row){ %>
+          <tr>
+            <td><%= row.company_name %></td>
+            <td><%= row.job_type %></td>
+            <td><%= row.location %></td>
+            <td><%= row.pay %></td>
+            <td><%= row.time %></td>
+            <td><button type="button" class="btn btn-primary"><a href="apply"><h4 style="font-size: 18px;">Apply</h4></a></button></td>
+          </tr>
+          <% }) %>
+      </table>
+    </div>
+  </div>
+	<div class="container" style="margin-left: 200px;">
+    <div class="row">
+      <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-6 col-sm-12 col-sm-offset-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title"><h2><b>Company Details Form</b></h2></div><br>
+            <div style="font-size: 85%; top: -10px;"></div>
+          </div>  
+          <div class="panel-body">
+            <form action="/link" id="CompanyDetailsForm" class="form-horizontal" method="post"  role="form">
+
+              <div id="signupalert" style="display:none" class="alert alert-danger">
+                <p>Error:</p>
+                <span></span>
+              </div>
+                            
+              <div class="form-group">
+                <label for="cname" class="col-md-6 control-label">Company Name</label>
+                  <div class="col-md-12">
+                    <input class="form-control" type="text" id="cname" name="cname" value=" " required placeholder="Enter company name">
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="type_of_job" class="col-md-6 control-label">Job Type</label>
+                  <div class="col-md-12">
+                    <select class="form-control" name="job">
+                      <option value="null">-null-</option>
+                      <option value="Transportation">Transportation</option>
+                      <option value="Carpentering">Carpentering</optio >
+                      <option value="Handcraft">Handcraft</option>
+                      <option value="Painting">Painting</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Househelp">Househelp</option>
+                      <option value="Cooking">Cooking</option>
+                      <option value="Weaving">Weaving</option>
+                      <option value="Sewing">Sewing</option>
+                    </select>
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="location" class="col-md-6 control-label">Location</label>
+                  <div class="col-md-12">
+                    <input class="form-control" type="text" id="loc" name="loc" value=" " required placeholder="Enter location of work">
+                  </div>
+              </div>
+                        
+              <div class="form-group">
+                <label for="payment" class="col-md-6 control-label">Payment</label>
+                  <div class="col-md-12">
+                    <input class="form-control" type="text" id="payment" name="payment" value=" " required placeholder="Enter amount to be paid">
+                  </div>
+              </div>
+                            
+              <div class="form-group">
+                <label for="time" class="col-md-6 control-label">Time Duration</label>
+                  <div class="col-md-12">
+                    <input class="form-control" type="text" id="time" name="time" value=" " required placeholder="Enter duration of work">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <!-- Button -->                                        
+                <div class="col-md-offset-6 col-md-12">
+                  <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Footer -->
+
+    <footer id="footer">
+      <footer class="bg-light text-center text-lg-start">
+        <div class="container p-4">
+          <div class="row">
+      
+            <!-- Help and Support -->
+      
+            <div class="col-lg-4 col-md-3 mb-3 mb-md-0">
+              <h5 class="text-uppercase"><b>Help & Support</b></h5>
+              <br>
+              <br>
+              <br>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYc5Ch9DqxtxPZoz_yEjTr0iTA_BI_siXMJ9yY260fpwRtDA/viewform" target="_blank" style="font-size: 20px;"> Click Here <i class='bx bx-help-circle'></i></a>
+            </div>
+              
+              <!-- Contact -->
+      
+            <div class="col-lg-4 col-md-3 mb-3 mb-md-0">
+              <h5 class="text-uppercase mb-0"><b>Contact</b></h5>
+              <p><i class="social-icon fas fa-envelope" style="height: 28px; width: 28px;"></i>
+                <br>
+                nacharya243@gmail.com
+                <br>
+                tyagiparisha99@gmail.com
+              </p>
+              <p><i class='bx bx-phone contact__icon' style="height: 28px; width: 28px;"></i>
+                <br>
+                Helpline No.- 1800 225588
+              </p>
+            </div>
+            
+              <!-- About Us -->
+      
+              <div class="col-lg-4 col-md-3 mb-3 mb-md-0">
+                <h5 class="text-uppercase"><b>About Us</b></h5>
+                <br>
+                <br>
+                <br>
+                <p><b> Developed from one section of the society to another section. </b></p>
+              </div>
+              
+          </div>
+          
+          <!-- Icons -->
+
+          <i class="social-icon fab fa-facebook-f"></i>
+          <i class="social-icon fab fa-twitter"></i>
+          <i class="social-icon fab fa-instagram"></i> 
+          
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-dark" >CORY.com</a>
+          </div>
+      </footer>
+    </footer>
+  </body>
+</html>

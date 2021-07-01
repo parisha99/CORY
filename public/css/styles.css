@@ -1,0 +1,255 @@
+
+body {
+  font-family: "Montserrat";
+  text-align: center;
+  background-color: #E8ECEF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Bold";
+}
+
+p {
+  color: #8f8f8f;
+}
+h1,h3,h2,h4,p{
+  color:black;
+}
+/* Headings */
+
+.big-heading {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Containers */
+
+.container-fluid{
+  padding: 7% 15%;
+}
+
+/* Sections */
+
+.colored-section {
+  /*background-color: #ff4c68;*/
+  opacity: 0.8;
+ 
+  text-decoration:"black";
+  
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+/* Navigation Bar */
+
+.navbar {
+  /*padding: 0 0 4.5rem;*/
+  margin-bottom: 50px;
+  
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+ 
+}
+
+.nav-item {
+  padding: 0 5px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+  
+}
+
+/* Buttons */
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Title Section */
+
+#title {
+ /* background-color: #ff4c68;*/
+  color: #fff;
+  text-align: left;
+}
+
+#title .container-fluid {
+  padding: 3% 15% 7%;
+}
+
+/* Title Image */
+
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
+}
+
+
+
+/* Features Section */
+
+
+
+
+.skills {
+  width: 50%;
+  margin: 70px 10px 100px 350px;
+  text-align:center;
+  column-count: 3;
+  column-gap: 200px;
+}
+.skill-row{
+  margin-bottom: 40px;
+}
+.chilli-img{
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+/* Skill and Training Section */
+
+#testimonials{
+  background-color:#98bfb5;
+}
+
+.testimonial-text {
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+
+
+/* Footer Section */
+
+#footer{
+  margin-top: 30px;
+}
+.social-icon {
+  margin: 20px 10px;
+}
+
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+
+  a:link{
+    color:black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover{
+    color:blue;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+
+
+.centered {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+/* .wrapper{
+  max-width: 450px;  
+  margin: 150px auto;
+} */
+
+.wrapper.search-input{
+  background:#fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+}
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+
+.search-input.icon{
+  height: 55px;
+  width: 55px;
+  line-height: 55px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  font-size: 20px;
+  color: #98bfb5;
+  cursor: pointer;
+}
+
+.search-input.autocom-box{
+  padding: 0px;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 0px;
+  pointer-events: none;
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  display: none;
+}
+
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+.search-input.active.autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-input.active.autocom-box li{
+  display: block;
+}
